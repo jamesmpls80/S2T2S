@@ -8,23 +8,21 @@ Speaks the generated output back to you using Coqui TTS.
 
 It’s designed as a quick-start local assistant without reliance on external cloud APIs (other than model downloads).
 
-🚧 Platform Support
+Platform Support:
 This project is currently tested only on macOS with Apple Silicon (M4).
 Other platforms may work but are not supported in the current install process.
 
-📦 Requirements
+Requirements:
 macOS 13+ (Ventura or later recommended)
 Apple Silicon chip (M4)
 Homebrew installed
 Miniconda or Anaconda installed
 Python 3.10.x (critical — newer Python versions break dependencies due to TTS and numpy pinning)
 
-🔧 Installation
+🔧 Installation:
 Clone this repository:
 git clone https://github.com/yourusername/Speech2Text2Speech.git
 cd Speech2Text2Speech
-
-Run the installer:
 chmod +x install.sh
 ./install.sh
 
@@ -39,18 +37,14 @@ Pre-download the Coqui TTS model tts_models/en/ljspeech/tacotron2-DDC.
 ⚠️ Known Issues & Notes
 Ollama Service Start Failure
 On some systems, brew services start ollama fails with:
-
-
 Bootstrap failed: 5: Input/output error
 The install script will log the error and continue. You can try starting it manually:
 
 sudo launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/homebrew.mxcl.ollama.plist
 
-Verbose Output
-By default, Coqui TTS and Whisper produce a lot of setup logs. The latest code reduces this noise in the console.
+Verbose Output: By default, Coqui TTS and Whisper produce a lot of setup logs. I am still working to reduce this noise in the console.
 
-CPU Mode Only
-Whisper is forced to run on CPU (device="cpu") with FP32 for compatibility.
+CPU Mode Only: Whisper is forced to run on CPU (device="cpu") with FP32 for compatibility.
 
 ▶️ Usage
 After installation:
@@ -65,7 +59,7 @@ Speak after the prompt:
 The install.sh script writes a detailed log to install.log in the project folder.
 This is useful for debugging failed installs or dependency conflicts.
 
-The basic script executes in sequence, s2t2s executes asynchronously sothat it is listening while it is talking. be sure to use headphones or the character will start arguing with itself.  Future versions will enable the user to interrrupt the virtual assistant, have a more robust long term memory and use of character profiles.
+The basic script executes in sequence, s2t2s executes asynchronously so that it is listening while it is talking. be sure to use headphones or the character will start arguing with itself.  Future versions will enable the user to interrrupt the virtual assistant, have a more robust long term memory and use of character profiles.
 
 📄 License
 MIT License — see LICENSE for details.
